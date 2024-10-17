@@ -8,125 +8,134 @@
     <title>Apartment Survey Form</title>
 </head>
 <body>
-    <h1 id="title">Survey Form</h1>
 
-    <p id="description">Feel Free to Answer The Questions Below Based On Your Own Experience And Opinion. If You Are Not Convenient In Answering A Particular Question Please Skip It By Answering "No". Every Answer Would Be Very Appreciated. Thank You For Your Time.</p>
+    <div id="form">
+        <h1 id="title">Survey Form</h1>
 
-    <form id="survey-form" action="/submit-form" method="POST">
-        <!-- Basic data like name, email, number, and place of residency. -->
-        <fieldset>
-          <label for="name">
-            Your Name (i.e. Jack)
-            <input type="text" id="name" name="name" placeholder="Write Your Name" required>
-          </label>
-  
-          <label for="email">
-            Your Email Address (i.e. jack@gmail.com)
-            <input type="email" id="email" name="email" placeholder="Write Your Email" required>
-          </label>
-  
-          <label for="number">
-            Your Phone Number (i.e. (415) 555-****)
-            <input type="number" id="number" name="number" min="1" max="10" placeholder="Write Your Number" required>
-          </label>
-  
-          <label for="dropdown">
-            Where Do You Live?
-            <select id="dropdown" name="living_in">
-              <option value="California">California</option>
-              <option value="Virginia">Virginia</option>
-              <option value="Texas">Texas</option>
-              <option value="Florida">Florida</option>
-              <option value="Hawaii">Hawaii</option>
-              <option value="Alaska">Alaska</option>
-              <option value="Ohio">Ohio</option>
-              <option value="Massachusetts">Massachusetts</option>
-              <option value="Georgia">Georgia</option>
-              <option value="Arizona">Arizona</option>
-            </select>
-          </label>
-        </fieldset>
-  
-        <fieldset>
-          <legend>Age</legend>
-          <label for="young_adult">
-            <input type="radio" id="young_adult" name="age" value="20-30" checked>
-            20-30
-          </label>
-  
-          <label for="middle_aged_adult">
-            <input type="radio" id="middle_aged_adult" value="31-40" name="age">
-            31-40
-          </label>
-  
-          <label for="mature_adult">
-            <input type="radio" id="mature_adult" value="41-50" name="age">
-            41-50
-          </label>
-  
-          <label for="senior_adult">
-            <input type="radio" id="senior_adult" value="50+" name="age">
-            50+
-          </label>
-  
-          <label for="prefer_not_to_say">
-            <input type="radio" id="prefer_not_to_say" value="prefer_not_to_say" name="age">
-            Prefer not to say
-          </label>
-        </fieldset>
-  
-        <fieldset>
-          <legend>
-            Select Any That Describe Your Current Living Situation
-          </legend>
-  
-          <label for="roommates">
-            <input type="checkbox" id="roommates" name="living_situation" value="roommates">
-            I live with roommates
-          </label>
-          <label for="remote_work">
-            <input type="checkbox" id="remote_work" name="living_situation" value="remote_work">
-            I work remotely
-          </label>
-          <label for="children">
-            <input type="checkbox" id="children" name="living_situation" value="children">
-            I have children
-          </label>
-  
-          <label for="pets">
-            <input type="checkbox" id="pets" name="living_situation" value="pets">
-            I have pets
-          </label>
-  
-          <label for="accessibility">
-            <input type="checkbox" id="accessibility" name="living_situation" value="accessibility">
-            I need accessibility accommodations
-          </label>
-        </fieldset>
+        <p id="description">Feel Free to Answer The Questions Below Based On Your Own Experience And Opinion. If You Are Not Convenient In Answering A Particular Question Please Skip It By Answering "No". Every Answer Would Be Very Appreciated. Thank You For Your Time.</p>
 
-        <fieldset>
-            <legend>Have You Ever Searched For An Apartment?</legend>
+        <form id="survey-form" action="/submit-form" method="POST">
 
-            <label for="yes">
-                <input type="radio" id="yes" name="apartment_question" value="yes" checked>
-                Yes
-            </label>
-
-            <label for="no">
-                <input type="radio" id="no" name="apartment_question" value="no">
-                No
-            </label>
-        </fieldset>
-
-        <fieldset>
-            <label for="apartment_searching_preference">
-                What are you looking for when searching for your perfect apartment online? Share your expectations, preferences, and any must-have features!
-                <textarea name="apartment_searching_preference" id="apartment_searching_preference" placeholder="Share your expections, preferences, and any must-have features here..." cols="50" rows="10"></textarea>
-            </label>
-        </fieldset>
-
-        <button type="submit" id="submit">Submit Form</button>
-      </form>
+            <div id="left-info-block">
+                <!-- Basic data like name, email, number, and place of residency. -->
+                <fieldset id="basic-information">
+                    <label for="name" class="sub-heading">
+                        Your Name (i.e. Jack)
+                        <input type="text" id="name" name="name" placeholder="Write Your Name" class="input-box" required>
+                    </label>
+            
+                    <label for="email" class="sub-heading">
+                        Your Email Address (i.e. jack@gmail.com)
+                        <input type="email" id="email" name="email" placeholder="Write Your Email" class="input-box" required>
+                    </label>
+            
+                    <label for="number" class="sub-heading">
+                        Your Phone Number (i.e. (415) 555-****)
+                        <input type="tel" id="number" name="number" min="1" max="10" placeholder="Write Your Number" class="input-box" pattern="[0-9]{10}" required>
+                    </label>
+            
+                    <label for="dropdown" class="sub-heading">
+                        Where Do You Live?
+                        <select id="dropdown" name="living_in" class="input-box">
+                            <option value="California">California</option>
+                            <option value="Virginia">Virginia</option>
+                            <option value="Texas">Texas</option>
+                            <option value="Florida">Florida</option>
+                            <option value="Hawaii">Hawaii</option>
+                            <option value="Alaska">Alaska</option>
+                            <option value="Ohio">Ohio</option>
+                            <option value="Massachusetts">Massachusetts</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Arizona">Arizona</option>
+                        </select>
+                    </label>
+                </fieldset>
+        
+                <fieldset id="age-information">
+                    <legend>Age</legend>
+                    <label for="young_adult">
+                        <input type="radio" id="young_adult" name="age" value="20-30" checked>
+                        20-30
+                    </label>
+            
+                    <label for="middle_aged_adult" class="margin-2rem-left">
+                        <input type="radio" id="middle_aged_adult" value="31-40" name="age">
+                        31-40
+                    </label>
+            
+                    <label for="mature_adult">
+                        <input type="radio" id="mature_adult" value="41-50" name="age">
+                        41-50
+                    </label>
+            
+                    <label for="senior_adult" class="margin-2rem-left">
+                        <input type="radio" id="senior_adult" value="50+" name="age">
+                        50+
+                    </label>
+            
+                    <label for="prefer_not_to_say">
+                        <input type="radio" id="prefer_not_to_say" value="prefer_not_to_say" name="age">
+                        Prefer not to say
+                    </label>
+                </fieldset>
+        
+                <fieldset>
+                    <legend>
+                        Select Any That Describe Your Current Living Situation
+                    </legend>
+            
+                    <label for="roommates">
+                        <input type="checkbox" id="roommates" name="living_situation" value="roommates" checked>
+                        I live with roommates
+                    </label>
+                    <label for="remote_work">
+                        <input type="checkbox" id="remote_work" name="living_situation" value="remote_work">
+                        I work remotely
+                    </label>
+                    <label for="children">
+                        <input type="checkbox" id="children" name="living_situation" value="children">
+                        I have children
+                    </label>
+            
+                    <label for="pets">
+                        <input type="checkbox" id="pets" name="living_situation" value="pets">
+                        I have pets
+                    </label>
+            
+                    <label for="accessibility">
+                        <input type="checkbox" id="accessibility" name="living_situation" value="accessibility">
+                        I need accessibility accommodations
+                    </label>
+                </fieldset>
+            </div>
+            
+            <div id="right-info-block">
+                <fieldset id="apartment-search-question">
+                    <legend>Have You Ever Searched For An Apartment?</legend>
+    
+                    <label for="yes">
+                        <input type="radio" id="yes" name="apartment_question" value="yes" checked>
+                        Yes
+                    </label>
+    
+                    <label for="no" class="margin-2rem-left">
+                        <input type="radio" id="no" name="apartment_question" value="no">
+                        No
+                    </label>
+                </fieldset>
+    
+                <fieldset id="">
+                    <label for="apartment_searching_preference" class="sub-heading">
+                        What are you looking for when searching for your perfect apartment online? Share your expectations, preferences, and any must-have features!
+                        <textarea name="apartment_searching_preference" id="apartment_searching_preference" placeholder="Share your expections, preferences, and any must-have features here..." cols="50" rows="10" required></textarea>
+                    </label>
+                </fieldset>
+    
+                <button type="submit" id="submit">Submit Form</button>
+            </div>
+        </form>
+    </div>
+    
 
     <!-- Script file linked. -->
     <script src="script/script.js"></script>
